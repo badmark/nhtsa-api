@@ -16,13 +16,13 @@ function NHTSAGetModel(year, make, model) {
     profileEmitter = this;
 
     //Replace spaces in make and model
-    var fmake = make.replace(/ /g,"%20");
-    var fmodel = model.replace(/ /g,"%20");
+    var fmake = make.replace(/ /g, "%20");
+    var fmodel = model.replace(/ /g, "%20");
 
 
 
     //Connect to the API URL (http://www.nhtsa.gov/webapi/api/SafetyRatings/)
-    var request = http.get("http://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/"+year+"/make/"+fmake+"/model/"+fmodel+"?format=json", function(response) {
+    var request = http.get("http://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/" + year + "/make/" + fmake + "/model/" + fmodel + "?format=json", function(response) {
         var body = "";
 
         if (response.statusCode !== 200) {
@@ -32,13 +32,13 @@ function NHTSAGetModel(year, make, model) {
         }
 
         //Read the data
-        response.on('data', function (chunk) {
+        response.on('data', function(chunk) {
             body += chunk;
             profileEmitter.emit("data", chunk);
         });
 
-        response.on('end', function () {
-            if(response.statusCode === 200) {
+        response.on('end', function() {
+            if (response.statusCode === 200) {
                 try {
                     //Parse the data
                     //var profile = JSON.parse(body);
@@ -46,10 +46,10 @@ function NHTSAGetModel(year, make, model) {
 
                     console.log('NHTSA vehicleId', vehicleId);
 
-                   getData(vehicleId, (e,r)=>{
-                       if(r){
-                           profileEmitter.emit("end", r);
-                       }
+                    getData(vehicleId, (e, r) => {
+                        if (r) {
+                            profileEmitter.emit("end", r);
+                        }
 
                     });
 
@@ -75,7 +75,7 @@ function NHTSAGetModel(year, make, model) {
                     profileEmitter.emit("error", error);
                 }
             }
-        }).on("error", function(error){
+        }).on("error", function(error) {
             profileEmitter.emit("error", error);
         });
     });
@@ -87,28 +87,28 @@ function NHTSAGetModel(year, make, model) {
 
 
 
-util.inherits( NHTSAGetModel, EventEmitter );
+util.inherits(NHTSAGetModel, EventEmitter);
 
 
 module.exports = NHTSAGetModel;
 
-var getData = function(vehicleId, callback){
+var getData = function(vehicleId, callback) {
     var body = "";
-    apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/'+ vehicleId +'?format=json';
+    apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/' + vehicleId + '?format=json';
 
-    console.log('API URL:' , apiURL);
+    console.log('API URL:', apiURL);
 
-    var request =  http.get(apiURL, (response)=> {
+    var request = http.get(apiURL, (response) => {
 
         //Read the data
-        response.on('data', function (chunk) {
+        response.on('data', function(chunk) {
             body += chunk;
             //profileEmitter.emit("data", chunk);
         });
-        response.on('end', function () {
+        response.on('end', function() {
             if (response.statusCode === 200) {
                 //console.log('NHTSA API Return:', response);
-                return  callback(null,body);
+                return callback(null, body);
             }
         });
     });
