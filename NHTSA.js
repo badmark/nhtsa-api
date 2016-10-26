@@ -44,7 +44,33 @@ function NHTSAGetModel(year, make, model) {
                     //var profile = JSON.parse(body);
                     var vehicleId = JSON.parse(body).Results[0].VehicleId;
 
-                    profileEmitter.emit("end", vehicleId);
+                    console.log('NHTSA vehicleId', vehicleId);
+
+                   getData(vehicleId, (e,r)=>{
+                       if(r){
+                           profileEmitter.emit("end", r);
+                       }
+
+                    });
+
+                    //Get Safety Data
+
+                    // apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/'+ vehicleId +'?format=json';
+                    //
+                    // console.log('API URL:' , apiURL);
+                    //
+                    //
+                    // http.get(apiURL, (response)=> {
+                    //     response.on('end', function () {
+                    //         if (response.statusCode === 200) {
+                    //             console.log('NHTSA API Return:', response);
+                    //             profileEmitter.emit("end", response.content);
+                    //         }
+                    //     });
+                    // });
+
+
+
                 } catch (error) {
                     profileEmitter.emit("error", error);
                 }
@@ -55,7 +81,39 @@ function NHTSAGetModel(year, make, model) {
     });
 }
 
+
+
+
+
+
+
 util.inherits( NHTSAGetModel, EventEmitter );
 
 
 module.exports = NHTSAGetModel;
+
+var getData = function(vehicleId, callback){
+    var body = "";
+    apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/'+ vehicleId +'?format=json';
+
+    console.log('API URL:' , apiURL);
+
+    var request =  http.get(apiURL, (response)=> {
+
+        //Read the data
+        response.on('data', function (chunk) {
+            body += chunk;
+            //profileEmitter.emit("data", chunk);
+        });
+        response.on('end', function () {
+            if (response.statusCode === 200) {
+                //console.log('NHTSA API Return:', response);
+                return  callback(null,body);
+            }
+        });
+    });
+
+
+
+
+};
