@@ -1,0 +1,25 @@
+{
+  "name": "nhtsa-api",
+  "version": "0.0.1",
+  "description": "An NPM package to query an automobile's NHTSA (National Highway and Transportation Safety Administration - U.S.) Safety Rating",
+  "main": "NHTSA.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badmark/nhtsa-api.git"
+  },
+  "keywords": [
+    "NHTSA",
+    "vehicles",
+    "automobiles",
+    "safety"
+  ],
+  "author": "Mark Buckman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/badmark/nhtsa-api/issues"
+  },
+  "homepage": "https://github.com/badmark/nhtsa-api#readme"
+}
