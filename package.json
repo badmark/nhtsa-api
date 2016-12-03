@@ -2,19 +2,19 @@
   "_args": [
     [
       {
-        "raw": "nhtsa-api@0.0.3",
+        "raw": "nhtsa-api@0.0.4",
         "scope": null,
         "escapedName": "nhtsa-api",
         "name": "nhtsa-api",
-        "rawSpec": "0.0.2",
-        "spec": "0.0.2",
+        "rawSpec": "0.0.4",
+        "spec": "0.0.4",
         "type": "version"
       },
       "/home/mark/projects/Apollo"
     ]
   ],
-  "_from": "nhtsa-api@0.0.3",
-  "_id": "nhtsa-api@0.0.3",
+  "_from": "nhtsa-api@0.0.4",
+  "_id": "nhtsa-api@0.0.4",
   "_inCache": true,
   "_location": "/nhtsa-api",
   "_nodeVersion": "6.5.0",
@@ -29,12 +29,12 @@
   "_npmVersion": "3.10.3",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "nhtsa-api@0.0.3",
+    "raw": "nhtsa-api@0.0.4",
     "scope": null,
     "escapedName": "nhtsa-api",
     "name": "nhtsa-api",
-    "rawSpec": "0.0.2",
-    "spec": "0.0.2",
+    "rawSpec": "0.0.4",
+    "spec": "0.0.4",
     "type": "version"
   },
   "_requiredBy": [
@@ -44,7 +44,7 @@
   "_resolved": "https://registry.npmjs.org/nhtsa-api/-/nhtsa-api-0.0.1.tgz",
   "_shasum": "be79baa38eac5e2959ade9324cb24807f1c4e522",
   "_shrinkwrap": null,
-  "_spec": "nhtsa-api@0.0.3",
+  "_spec": "nhtsa-api@0.0.4",
   "_where": "/home/mark/projects/Apollo",
   "author": {
     "name": "Mark Buckman"
@@ -88,5 +88,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.2"
+  "version": "0.0.4"
 }
