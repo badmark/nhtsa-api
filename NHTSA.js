@@ -20,9 +20,17 @@ function NHTSAGetModel(year, make, model) {
     var fmodel = model.replace(/ /g, "%20");
 
 
+    var APIURL = "://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/" + year + "/make/" + fmake + "/model/" + fmodel + "?format=json";
 
     //Connect to the API URL (http://www.nhtsa.gov/webapi/api/SafetyRatings/)
-    var request = http.get("http://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/" + year + "/make/" + fmake + "/model/" + fmodel + "?format=json", function(response) {
+    if (location.protocol === 'https:') {
+        // page is secure
+        APIURL = "https" + APIURL;
+    }else{
+        APIURL = "http" + APIURL;
+    }
+
+    var request = http.get(APIURL, function(response) {
         var body = "";
 
         if (response.statusCode !== 200) {
@@ -94,8 +102,15 @@ module.exports = NHTSAGetModel;
 
 var getData = function(vehicleId, callback) {
     var body = "";
-    apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/' + vehicleId + '?format=json';
+    apiURL = '://www.nhtsa.gov/webapi/api/SafetyRatings/VehicleId/' + vehicleId + '?format=json';
 
+    if (location.protocol === 'https:') {
+        // page is secure
+        apiURl = "https" + apiURL;
+    }
+    else {
+        apiURL = "http" + apiURL;
+    }
     console.log('API URL:', apiURL);
 
     var request = http.get(apiURL, (response) => {

@@ -1,25 +1,92 @@
 {
-  "name": "nhtsa-api",
-  "version": "0.0.1",
+  "_args": [
+    [
+      {
+        "raw": "nhtsa-api@0.0.3",
+        "scope": null,
+        "escapedName": "nhtsa-api",
+        "name": "nhtsa-api",
+        "rawSpec": "0.0.2",
+        "spec": "0.0.2",
+        "type": "version"
+      },
+      "/home/mark/projects/Apollo"
+    ]
+  ],
+  "_from": "nhtsa-api@0.0.3",
+  "_id": "nhtsa-api@0.0.3",
+  "_inCache": true,
+  "_location": "/nhtsa-api",
+  "_nodeVersion": "6.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/nhtsa-api-0.0.1.tgz_1477507491043_0.7500673262402415"
+  },
+  "_npmUser": {
+    "name": "badmark",
+    "email": "badmark@gmail.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "nhtsa-api@0.0.3",
+    "scope": null,
+    "escapedName": "nhtsa-api",
+    "name": "nhtsa-api",
+    "rawSpec": "0.0.2",
+    "spec": "0.0.2",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nhtsa-api/-/nhtsa-api-0.0.1.tgz",
+  "_shasum": "be79baa38eac5e2959ade9324cb24807f1c4e522",
+  "_shrinkwrap": null,
+  "_spec": "nhtsa-api@0.0.3",
+  "_where": "/home/mark/projects/Apollo",
+  "author": {
+    "name": "Mark Buckman"
+  },
+  "bugs": {
+    "url": "https://github.com/badmark/nhtsa-api/issues"
+  },
+  "dependencies": {
+    "fibers": "^1.0.15",
+  },
   "description": "An NPM package to query an automobile's NHTSA (National Highway and Transportation Safety Administration - U.S.) Safety Rating",
-  "main": "NHTSA.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "be79baa38eac5e2959ade9324cb24807f1c4e522",
+    "tarball": "https://registry.npmjs.org/nhtsa-api/-/nhtsa-api-0.0.1.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/badmark/nhtsa-api.git"
-  },
+  "gitHead": "72f50507d799069812e70dab4ded665bcf0215ee",
+  "homepage": "https://github.com/badmark/nhtsa-api#readme",
   "keywords": [
     "NHTSA",
     "vehicles",
     "automobiles",
     "safety"
   ],
-  "author": "Mark Buckman",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/badmark/nhtsa-api/issues"
+  "main": "NHTSA.js",
+  "maintainers": [
+    {
+      "name": "badmark",
+      "email": "badmark@gmail.com"
+    }
+  ],
+  "name": "nhtsa-api",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badmark/nhtsa-api.git"
   },
-  "homepage": "https://github.com/badmark/nhtsa-api#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.2"
 }
