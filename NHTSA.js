@@ -20,15 +20,15 @@ function NHTSAGetModel(year, make, model) {
     var fmodel = model.replace(/ /g, "%20");
 
 
-    var APIURL = "://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/" + year + "/make/" + fmake + "/model/" + fmodel + "?format=json";
+    var APIURL = "https://www.nhtsa.gov/webapi/api/SafetyRatings/modelyear/" + year + "/make/" + fmake + "/model/" + fmodel + "?format=json";
 
-    //Connect to the API URL (http://www.nhtsa.gov/webapi/api/SafetyRatings/)
+    /*Connect to the API URL (http://www.nhtsa.gov/webapi/api/SafetyRatings/)
     if (location.protocol === 'https:') {
         // page is secure
         APIURL = "https" + APIURL;
     }else{
         APIURL = "http" + APIURL;
-    }
+    }*/
 
     var request = http.get(APIURL, function(response) {
         var body = "";
